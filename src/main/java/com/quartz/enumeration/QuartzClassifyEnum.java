@@ -2,19 +2,24 @@ package com.quartz.enumeration;
 
 public enum QuartzClassifyEnum {
 
-    QuartzJobClassify(),
-    QuartzJobGroupClassify();
+    QuartzJobClassify("quartz_job", "quartz_job_group"),
+    QuartzJobGroupClassify("", "");
+
+    QuartzClassifyEnum (String name, String groupName) {
+        this.name = name;
+        this.groupName = groupName;
+    }
 
     private String name;
 
-    private String desc;
+    private String groupName;
 
     public String getName() {
         return name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getGroupName() {
+        return groupName;
     }
 
 }

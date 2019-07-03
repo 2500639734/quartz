@@ -3,8 +3,8 @@ package com.quartz.enumeration;
 
 public enum QuartzResultEnum {
 
-    EXECUTE_SUCCESS (10, "success"),
-    EXECUTE_FAILURE (20, "failure");
+    SUCCESS (1, "成功"),
+    FAILURE (2, "失败");
 
     QuartzResultEnum (Integer code, String desc) {
         this.code = code;
