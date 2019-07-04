@@ -5,17 +5,17 @@ public enum EffectivenessEnum {
     VALID(true, "有效"),
     INVALID(false, "无效");
 
-    EffectivenessEnum(Boolean valid, String desc) {
-        this.valid = valid;
+    EffectivenessEnum(Boolean type, String desc) {
+        this.type = type;
         this.desc = desc;
     }
 
-    private Boolean valid;
+    private Boolean type;
 
     private String desc;
 
-    public Boolean getValid() {
-        return valid;
+    public Boolean getType() {
+        return type;
     }
 
     public String getDesc() {
