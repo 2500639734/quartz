@@ -108,11 +108,12 @@ public class MybatisPlusGeneratorUtils {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.quartz.pojo.BasePojo");
-        strategy.setSuperEntityColumns("create_time", "update_time", "desc", "valid");
+        // strategy.setSuperEntityClass("com.quartz.pojo.BasePojo");
+        // strategy.setSuperEntityColumns("create_time", "update_time", "desc", "valid");
         strategy.setEntityLombokModel(true);
         strategy.setEntityBuilderModel(true);
         strategy.setRestControllerStyle(true);
+        strategy.setLogicDeleteFieldName("valid");
         // 公共父类
         // strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
         // 写于父类中的公共字段
