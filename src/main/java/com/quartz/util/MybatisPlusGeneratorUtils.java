@@ -21,6 +21,10 @@ public class MybatisPlusGeneratorUtils {
 
     }
 
+    /**
+     * 代码生成
+     * @param tableNames 生成代码的类
+     */
     public static void generatorCode (String... tableNames) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();

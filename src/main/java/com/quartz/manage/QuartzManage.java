@@ -1,8 +1,11 @@
 package com.quartz.manage;
 
 import com.quartz.enumeration.QuartzClassifyEnum;
+import com.quartz.pojo.QuartzInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
+
+import java.util.List;
 
 /**
  * Quartz任务管理类
@@ -147,6 +150,35 @@ public class QuartzManage {
             log.error(e.getMessage(), e);
         }
         return false;
+    }
+
+    /**
+     * 初始化定时任务, 加入任务后立即启动调度器
+     * @param quartzInfoList 定时任务列表
+     */
+    public static void init (List<QuartzInfo> quartzInfoList) {
+        init(quartzInfoList, true);
+    }
+
+    /**
+     * 初始化定时任务
+     * @param quartzInfoList 定时任务列表
+     * @param isStart 加入任务后是否立即启动调度器
+     */
+    public static void init (List<QuartzInfo> quartzInfoList, boolean isStart) {
+        try {
+            for (QuartzInfo quartzInfo : quartzInfoList) {
+                String classPath = quartzInfo.getClassPath();
+                Class clazz = Class.forName(classPath);
+                add(quartzInfo.getCode(), clazz, quartzInfo.getCycle());
+
+                if (!isStarted()) {
+                    start();
+                }
+            }
+        } catch (ClassNotFoundException e) {
+            log.error(e.getMessage(), e);
+        }
     }
 
 }
