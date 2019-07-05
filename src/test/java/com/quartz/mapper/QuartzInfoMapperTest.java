@@ -28,7 +28,8 @@ public class QuartzInfoMapperTest extends QuartzApplicationTests {
 
     @Test
     public void updateTest () {
-        QuartzInfo quartzInfo = new QuartzInfo().setId(1L)
+        QuartzInfo quartzInfo = new QuartzInfo()
+                .setId(1L)
                 .setClassPath("com.test").setDescription("test update quartz_info");
         quartzInfoMapper.updateById(quartzInfo);
     }

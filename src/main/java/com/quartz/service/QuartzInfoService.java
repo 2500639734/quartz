@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author shenke
- * @since 2019-07-04
+ * @since 2019-07-05
  */
 public interface QuartzInfoService extends IService<QuartzInfo> {
 

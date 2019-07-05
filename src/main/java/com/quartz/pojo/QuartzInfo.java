@@ -17,7 +17,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author shenke
- * @since 2019-07-04
+ * @since 2019-07-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -33,6 +33,9 @@ public class QuartzInfo implements Serializable {
 
     @ApiModelProperty(value = "定时任务名称")
     private String name;
+
+    @ApiModelProperty(value = "定时任务内部标识")
+    private String code;
 
     @ApiModelProperty(value = "定时任务执行周期表达式")
     private String cycle;

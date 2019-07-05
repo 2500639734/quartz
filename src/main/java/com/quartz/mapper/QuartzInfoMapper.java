@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author shenke
- * @since 2019-07-04
+ * @since 2019-07-05
  */
 public interface QuartzInfoMapper extends BaseMapper<QuartzInfo> {
 
